@@ -1,10 +1,10 @@
-set -g tb $tacklebox_path
+set -g _tb $tacklebox_path
 
-. $tb/core/core.fish
-. $tb/themes/$tacklebox_theme.fish
+. $_tb/core/core.fish
+. $_tb/themes/$tacklebox_theme.fish
 
 for plug in $tacklebox_plugins
-    for f in $tb/plugins/$plug/*.fish
+    for f in $_tb/plugins/$plug/*.fish
         . $f
     end
 end

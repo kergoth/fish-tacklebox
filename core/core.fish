@@ -13,7 +13,7 @@ function _tacklebox_help_generic
     echo
 
     echo "Disabled plugins:"
-        for p in (ls $tb/plugins)
+        for p in (ls $_tb/plugins)
             if not contains $p $tacklebox_plugins
                 echo "    $p"
             end
@@ -27,7 +27,7 @@ function _tacklebox_help
         return
     end
 
-    if not contains $argv[1] (ls $tb/plugins)
+    if not contains $argv[1] (ls $_tb/plugins)
         printf "Unknown plugin '%s'\n" $argv[1] >&2
         return 1
     else
