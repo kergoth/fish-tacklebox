@@ -1,0 +1,6 @@
+Various tools to make working with Python easier.
+
+Contents
+
+    cdp  Change directory to the location of the specified Python module.
+    wo   Work on a virtualenv specified in a file or an argument.

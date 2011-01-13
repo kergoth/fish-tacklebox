@@ -17,3 +17,11 @@ function strip -d "Strip whitespace from around the arguments or stdin."
         echo $argv | strip
     end
 end
+
+function strip_quotes -d "Strip single and double from around the arguments or stdin."
+    if test (count $argv) -eq 0
+        python -c 'import sys; sys.stdout.write(sys.stdin.read().strip("\"\'"))'
+    else
+        echo $argv | strip_quotes
+    end
+end
