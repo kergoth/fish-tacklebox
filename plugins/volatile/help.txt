@@ -1,0 +1,9 @@
+This plugin handles some volatile files which you want in an alternate
+location. This can be useful when using an NFS home directory, or an SSD home
+directory if you're paranoid about unnecessary flash writes/erases.
+
+Set volatile_path to the destination path (e.g. the non-NFS home directory)
+prior to initializing tacklebox. Optionally, set volatile_elements to the
+elements you want adjusted.
+
+Default elements: ccache viminfo less_history
