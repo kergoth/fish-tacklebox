@@ -24,3 +24,34 @@ for plug in $tacklebox_plugins
         end
     end
 end
+
+# As the function path is persistent, we need to ensure that plugins that were
+# enabled, but no longer are, get their paths removed.
+for plug in $_tb/plugins/*/functions
+    set -l plugname (basename (dirname $plug))
+    if contains $plug $fish_function_path
+        if not contains $plugname $tacklebox_plugins
+            for i in (seq 1 (count $fish_function_path))
+                if test $fish_function_path[$i] = $plug
+                    set -e fish_function_path[$i]
+                    break
+                end
+            end
+        end
+    end
+end
+
+# Same for completions
+for plug in $_tb/plugins/*/completions
+    set -l plugname (basename (dirname $plug))
+    if contains $plug $fish_complete_path
+        if not contains $plugname $tacklebox_plugins
+            for i in (seq 1 (count $fish_complete_path))
+                if test $fish_complete_path[$i] = $plug
+                    set -e fish_complete_path[$i]
+                    break
+                end
+            end
+        end
+    end
+end
