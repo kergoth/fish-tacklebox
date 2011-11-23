@@ -11,9 +11,13 @@ for plug in $tacklebox_plugins
         . $f
     end
     for comp in $_tb/plugins/$plug/completions
-        set fish_complete_path $comp $fish_complete_path
+        if not contains $func $fish_complete_path
+            set fish_complete_path $comp $fish_complete_path
+        end
     end
     for func in $_tb/plugins/$plug/functions
-        set fish_function_path $func $fish_function_path
+        if not contains $func $fish_function_path
+            set fish_function_path $func $fish_function_path
+        end
     end
 end
