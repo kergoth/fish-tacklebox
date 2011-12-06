@@ -17,4 +17,5 @@ function workon -d "Activate virtual environment in $WORKON_HOME"
     else
         echo "$tgt not found"
     end
+    return 0
 end
