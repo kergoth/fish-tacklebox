@@ -1,1 +1,1 @@
-complete -f -c workon -a "(cd $WORKON_HOME 2>/dev/null; and command ls -p | sed -n 's,/\$,,p')"
+complete -f -c workon -a "(command ls -d $WORKON_HOME/* 2>/dev/null | sed 's,.*/,,')"
