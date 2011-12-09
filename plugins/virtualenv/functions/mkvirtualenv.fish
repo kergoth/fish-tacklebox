@@ -32,7 +32,7 @@ function mkvirtualenv -d 'Create a virtualenv in WORKON_HOME and activate it'
     set -l envname $opts[(expr $position + 1)]
     mkdir -p $WORKON_HOME
     cd $WORKON_HOME
-    virtualenv --distribute $envname
+    virtualenv $VIRTUALENVWRAPPER_VIRTUALENV_ARGS $envname
     if test $status -ne 0
         return $status
     end
