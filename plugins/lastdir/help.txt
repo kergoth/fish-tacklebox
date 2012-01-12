@@ -1,0 +1,3 @@
+This plugin returns you to the last directory cd'd to when starting a new
+shell. It seems quite common to create multiple terminals or tmux panes or
+screen windows in the same workspace, so this can be useful for that.
